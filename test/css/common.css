@@ -1,0 +1,219 @@
+/* CSS RESET */
+* {margin: 0; padding: 0; border: 0; font-style: normal;}
+ol,ul {list-style: none;}
+a, a:hover, a:active, a:focus, a:visited {color: inherit; text-decoration: none;}
+
+/* GLOBAL */
+*::selection {background-color: rgba(160,160,160,0.75);}
+.clearfix:after {content: ""; display: block; clear: both;};
+#modal {display: none; position: absolute; top: 0; bottom: 0; z-index: 10; left: 0; width: 100%; background-color: rgba(0,0,0,0.5);}
+#content:empty:before {content: "준비중 입니다."; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #999; font-size: 3.125em;}
+.inner {position: relative; margin: 0 auto; padding: 80px 40px 0; width: 100%; max-width: 1280px; height: 100%; box-sizing: border-box;}
+
+/* LAYOUT */
+html {}
+body {}
+#wrap {position: relative; font-size: 1em;}
+#modal {display: none; position: fixed; z-index: 11; top: 0; left: 0; bottom: 0; right: 0; background-color: rgba(0,0,0,0.75);}
+
+/* Header */
+header {position: fixed; top: 0; left: 0; z-index: 12; width: 100%; background-color: rgba(255,255,255,0.75); border-bottom: 1px solid #ddd;}
+header nav {float: right; position: relative; z-index: 21; margin-right: 20px;}
+header nav .btn {display: none; position: absolute; top: 0; right: 100%; padding: 10px; width: 40px; height: 40px; cursor: pointer;}
+header nav .btn span {position: relative; display: block; height: 100%;}
+header nav .btn span i {display: block; position: absolute; left: 50%; margin: -3px 0 0 -20px; width: 40px; height: 4px; background-color: #999; transition: 0.5s;}
+header nav .btn span i:nth-child(1) {top: 3px;}
+header nav .btn span i:nth-child(2) {top: 20px;}
+header nav .btn span i:nth-child(3) {top: 37px;}
+header nav.active .btn span i:nth-child(1) {top: 12px; left: 40px; transform: rotate(45deg); width: 26px;}
+header nav.active .btn span i:nth-child(2) {top: 20px;}
+header nav.active .btn span i:nth-child(3) {top: 28px; left: 40px; transform: rotate(-45deg); width: 26px;}
+header nav .menu {float: left; position: relative; width: 160px;}
+header nav .menu+.menu {margin-left: 1px;}
+header nav .menu+.menu:before {content: ""; position: absolute; left: -1px; top: 50%; margin-top: -11px; width: 1px; height: 22px; background-color: #999; vertical-align: middle;}
+header nav .menu .tit {display: block; text-align: center; cursor: pointer; vertical-align: middle;}
+header nav .menu .tit span {color: #999; font-size: 1.375em; line-height: 80px;}
+header nav .menu .tit:hover span {color: #333;}
+header nav .menu ul {display: none; position: absolute; top: 100%; left: 0; right: 0; background-color: rgba(255,255,255,0.75); border-bottom: 3px solid #bbb;}
+header nav .menu ul li {padding: 0 10px;}
+header nav .menu ul li:hover {color: #fff; background-color: #999;}
+header nav .menu ul li a {display: block; line-height: 42px;}
+header nav .menu ul li+li a {border-top: 1px dashed #bbb;}
+header nav .menu ul li a span {}
+
+/* Footer */
+footer {height: 80px; background-color: #333; text-align: center;}
+footer span {color: #fff; font-size: 1.125em; line-height: 80px;}
+
+/* Container */
+#container {}
+#container section {overflow: hidden; position: relative; background: 50% 50% no-repeat;
+	-webkit-background-size: cover; -webkit-background-attachment: fixed;
+	background-size: cover; background-attachment: fixed;
+}
+#content {position: relative; margin-top: 80px; min-height: 800px;}
+
+#visual {}
+#visual .bx {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 1; transition: 1s;}
+#visual.ready .bx {top: 90%;}
+
+#visual .bx .frm {padding: 20px 30px; color: #666; text-align: center; border: 10px solid #666; transform: scale(1); opacity: 1; transition: 1s;}
+#visual.ready .bx .frm {transform: scale(0); opacity: 0;}
+
+#visual .bx .frm span {display: block; font-size: 18px; transform: scale(1); opacity: 1; transition: 1s 1s;}
+#visual.ready .bx .frm span {transform: scale(2); opacity: 0;}
+
+#visual .bx .frm p {padding: 10px 0; font-size: 54px; font-weight: bold; transform: scale(1); opacity: 1; transition: 1s 2s;}
+#visual.ready .bx .frm p {transform: scale(2); opacity: 0;}
+
+#visual .bx .frm b {display: block; font-size: 22px; transform: scale(1); opacity: 1; transition: 1s 3s;}
+#visual.ready .bx .frm b {transform: scale(2); opacity: 0;}
+
+/* VIDEO SIZE SET */
+.js_cover {display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+
+/* PARALLAX SCROLL */
+#container .scroll_nav {position: fixed; z-index: 2; right: 15px; top: 50%; width: 30px; transform: translate(0, -50%);}
+#container .scroll_nav i {float: right; clear: both; display: block; padding: 0 15px; height: 30px; border-radius: 15px; background-color: rgba(255,255,255,0.75); cursor: pointer; transition: width 0.5s;}
+#container .scroll_nav i+i {margin-top: 15px;}
+#container .scroll_nav i span {overflow: hidden; display: block; font-size: 0.875em; line-height: 30px; letter-spacing: 10px; text-indent: 10px;}
+
+/* POP UP */
+#pop {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 75%;}
+#pop .pop {float: left; margin: 2.5% 0; padding: 15%; background-color: #fff; cursor: pointer;}
+#pop .pop+.pop {margin-left: 5%;}
+#pop .pop:nth-child(3n+1) {margin-left: 0;}
+#popup {}
+#popup .item {display: none; position: fixed; z-index: 13; top: 50%; left: 50%; transform: translate(-50%, -50%); padding-right: 300px; width: 90%; max-width: 1000px; box-sizing: border-box;}
+#popup .item .preview {}
+#popup .item .preview .preview_inner {max-height: 600px; overflow-y: auto;}
+#popup .item .preview .preview_inner img {display: block; width: 100%;}
+#popup .item .info {position: absolute; top: 0; bottom: 0; right: 0; padding: 20px; width: 300px; background-color: #fff; box-sizing: border-box;}
+#popup .item .info .tit {color: #666; font-size: 1.5em; font-weight: bold;}
+#popup .item .info .desc {margin-top: 30px; color: #666;}
+#popup .item .info a {position: absolute; left: 20px; bottom: 60px;}
+#popup .close {display: block; position: absolute; right: -20px; top: -20px; width: 40px; height: 40px; background-color: #fdd; border: 4px solid #fff; border-radius: 50%; box-sizing: border-box; cursor: pointer;}
+#popup .close:before {content: ""; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(45deg); width: 20px; height: 6px; border-radius: 3px; background-color: #333; transition: 0.5s;}
+#popup .close:hover:before {background-color: #f33;}
+#popup .close:after {content: ""; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-45deg); width: 20px; height: 6px; border-radius: 3px; background-color: #333; transition: 0.5s;}
+#popup .close:hover:after {background-color: #f33;}
+
+/* PROGRESS BAR */
+#progress_bar {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 75%;}
+#progress_bar .talent {float: left; margin: 20px 0; width: 50%; box-sizing: border-box;}
+#progress_bar .talent:nth-child(odd) {padding-right: 20px;}
+#progress_bar .talent:nth-child(even) {padding-left: 20px;}
+#progress_bar .talent .tit {color: #666; font-size: 1.75em; font-weight: bold;}
+#progress_bar .talent .bar {position: relative; margin-top: 30px; height: 50px; border: 1px solid #666; text-align: center;}
+#progress_bar .talent .bar span {position: absolute; top: 0; left: 0; width: 100%; color: #666; font-size: 1.25em; line-height: 50px;}
+#progress_bar .talent .bar span:after {content: "%"}
+#progress_bar .talent .bar i {display: block; width: 0; height: 100%; background-color: orange;}
+
+/* SLIDE */
+#slide {position: absolute; top: 55%; left: 50%; transform: translate(-50% ,-50%); width: 75%; min-width: 300px; height: 600px;}
+#slide .slide_frm {position: relative; overflow: hidden; width: 100%; height: 100%;}
+#slide .slide_frm .slide_cnt {position: absolute; overflow: hidden; width: 400%; height: 100%;}
+#slide .slide_frm .slide_cnt li {float: left; width: 25%; height: 100%; color: #fff; font-size: 3.750em; line-height: 550px; text-align: center; background: 50% 50% no-repeat;
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+#slide .controler {}
+#slide .controler a {display: block; position: absolute; top: 0; bottom: 0; width: 20%; transition: 1s;}
+#slide .controler a.prev {left: 0; opacity: 0;}
+#slide .controler a.prev:hover {background: linear-gradient(to left, rgba(255,255,255,0), rgba(255,255,255,1)); opacity: 1;}
+#slide .controler a.next {right: 0; opacity: 0;}
+#slide .controler a.next:hover {background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,1)); opacity: 1;}
+#slide .controler .navi {position: absolute; bottom: 10px; width: 100%; text-align: center;}
+#slide .controler .navi i {display: inline-block; margin: 0 10px; width: 20px; height: 20px; background-color: rgba(255,255,255,0.5); border-radius: 10px; cursor: pointer;}
+#slide .controler .navi i.active {width: 60px;}
+#slide .controler .navi i:hover {background-color: rgba(255,255,255,1);}
+
+/* TAB */
+#tab {position: absolute; top: 55%; left: 50%; transform: translate(-50% ,-50%); width: 75%; min-width: 300px; height: 70%;}
+#tab nav {overflow: hidden; width: 100%;}
+#tab nav a {float: left; display: block; width: 25%; height: 50px; line-height: 50px; text-align: center; color: #ddd; font-size: 1.25em; font-weight: bold; text-decoration: none; border: 1px solid #ddd; border-bottom-color: #666; box-sizing: border-box; }
+#tab nav a+a {position: relative; border-left: 0;}
+#tab nav a.selected {color: #666; border-color: #666; border-bottom: 0; background-color: rgba(255,255,255,0.5);}
+#tab nav a+a.selected:before {content: ""; display: block; position: absolute; left: -1px; top: -1px; bottom: 0; width: 1px; background-color: #666;}
+#tab .cnt {height: 100%; box-sizing: border-box; background-color: rgba(255,255,255,0.5);}
+#tab .cnt div {display: none; height: 100%; color: #666; font-size: 2.375em; text-align: center; border: 1px solid #666; border-top: 0; line-height: 500px;}
+#tab .cnt div.active {display: block;}
+
+@media screen and (max-width: 768px) {
+
+	/* GLOBAL */
+	.inner {padding: 0 20px;}
+
+	/* LAYOUT */
+	#wrap {font-size: 0.8em;}
+
+	/* Header */
+	header {height: 60px;}
+	header nav {float: none; position: fixed; top: 0; bottom: 0; left: auto; right: -220px; margin-right: 0; width: 220px; background-color: rgba(255,255,255,1); border-left: 1px solid #ddd; border-bottom: 0; transition: 0.5s;}
+	header nav.active {right: 0;}
+	header nav .btn {display: block;}
+	header nav .menu {float: none; width: 100%;}
+	header nav .menu+.menu {margin-left: 0;}
+	header nav .menu+.menu:before {content: none;}
+	header nav .menu ul {position: static;}
+	/* Footer */
+
+	/* Container */
+	section:not(#visual) {height: auto !important;}
+
+	/* PARALLAX SCROLL */
+	#container .scroll_nav {visibility: hidden;}
+
+	/* POP UP */
+	#pop {position: static; padding: 80px 0; width: 100%; transform: translate(0,0);}
+	#popup .item .preview .preview_inner {max-height: 360px;}
+	#popup .item {padding-right: 0;}
+	#popup .item .info {position: static; width: 100%;}
+	#popup .item .info a {display: inline-block; margin-top: 40px; position: static;}
+	
+	/* PROGRESS BAR */
+	#progress_bar {position: static; transform: translate(0,0); padding: 80px 0; width: 100%;}
+
+	/* SLIDE */
+	#slide {position: static; transform: translate(0,0); padding: 80px 0; width: 100%; height: 400px;}
+
+	/* TAB */
+	#tab {position: static; transform: translate(0,0); padding: 80px 0; width: 100%; box-sizing: border-box;}
+
+}
+
+@media screen and (max-width: 480px) {	
+
+	/* GLOBAL */
+	.inner {padding: 0 5px;}
+
+	/* LAYOUT */
+	#wrap {font-size: 0.6em;}
+
+	/* Header */
+
+	/* Footer */
+
+	/* Container */
+	
+	/* PARALLAX SCROLL */
+
+	/* POP UP */
+	#pop {display: none;}
+	#popup {padding: 80px 0;}
+	#popup .item {display: block; position: static; transform: translate(0,0); width: 100%;}
+	#popup .item+.item {margin-top: 10px;}
+	#popup .item .preview .preview_inner {overflow: hidden;}
+	#popup .item .close {display: none;}
+
+	/* PROGRESS BAR */
+	#progress_bar .talent {padding: 0 20px; width: 100%;}
+
+	/* SLIDE */
+
+	/* TAB */
+	#tab {border-top: 1px solid #666;}
+	#tab nav {display: none;}
+	#tab .cnt {border-top: 1px solid #666;}
+	#tab .cnt div {display: block !important;}
+}
